@@ -13,9 +13,9 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 # Introduction
 
-# Section 1
+# Vignette Content Details
 
-# section 2
+# API
 
 ## Subsection 2.1
 

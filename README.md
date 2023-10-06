@@ -4,16 +4,17 @@ Keren Vivas
 2023-10-06
 
 - <a href="#introduction" id="toc-introduction">Introduction</a>
-- <a href="#section-1" id="toc-section-1">Section 1</a>
-- <a href="#section-2" id="toc-section-2">section 2</a>
+- <a href="#vignette-content-details"
+  id="toc-vignette-content-details">Vignette Content Details</a>
+- <a href="#api" id="toc-api">API</a>
   - <a href="#subsection-21" id="toc-subsection-21">Subsection 2.1</a>
   - <a href="#including-plots" id="toc-including-plots">Including Plots</a>
 
 # Introduction
 
-# Section 1
+# Vignette Content Details
 
-# section 2
+# API
 
 ## Subsection 2.1
 
