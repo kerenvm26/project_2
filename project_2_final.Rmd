@@ -203,7 +203,7 @@ contigency_data <- all_product_type[,"product_type"]
 contigency_table <- table(contigency_data)
 
 # Print the contingency table
-print(contigency_table)
+contigency_table
 ```
 
 ## Two_way contingency table
@@ -221,7 +221,7 @@ contigency_data <- all_product_type[,c("brand","product_type")]
 contigency_table <- table(contigency_data)
 
 # Print the contingency table
-print(contigency_table)
+contigency_table
 ```
 
 ## Two_way contingency table filtering using function
@@ -237,7 +237,7 @@ contingency_data <- all_USD_product[, c("product_type", "brand")]
 contingency_table <- table(contingency_data)
 
 # Print the contingency table
-print(contingency_table)
+contingency_table
 ```
 
 ## Stacked_bar_plot 
@@ -256,7 +256,7 @@ stacked_bar_plot <- ggplot(my_data_filtered, aes(x = product_type, fill = curren
   scale_fill_brewer(palette = "Set1", type = "qual", direction = 1)  # Choose "Set1" with three colors
 
 # Print the stacked bar plot
-print(stacked_bar_plot)
+stacked_bar_plot
 ```
 
 ## Violin plot
@@ -275,7 +275,7 @@ violin_plot <- ggplot(my_data_filtered, aes(x = product_type, y = as.numeric(pri
        x = "Product type", y = "Price")
 
 # Print the violin plot
-print(violin_plot)
+violin_plot
 
 ```
 
@@ -295,6 +295,6 @@ my_data_filtered <- query_API[!is.na(query_API$price) & !is.na(query_API$product
    facet_wrap(~product_type)
  
  # Print the histogram
-print(histogram_plot)
+histogram_plot
 ```
 # End of the Project 2

@@ -264,14 +264,14 @@ contigency_data <- all_product_type[,"product_type"]
 contigency_table <- table(contigency_data)
 
 # Print the contingency table
-print(contigency_table)
+contigency_table
 ```
 
     ## contigency_data
-    ##       blush     bronzer     eyebrow    eyeliner   eyeshadow  foundation   lip_liner 
-    ##          78          69          49         148          86         166          29 
-    ##    lipstick     mascara nail_polish 
-    ##         154          92          60
+    ##       blush     bronzer     eyebrow    eyeliner   eyeshadow  foundation   lip_liner    lipstick     mascara 
+    ##          78          69          49         148          86         166          29         154          92 
+    ## nail_polish 
+    ##          60
 
 ## Two_way contingency table
 
@@ -292,127 +292,68 @@ contigency_data <- all_product_type[,c("brand","product_type")]
 contigency_table <- table(contigency_data)
 
 # Print the contingency table
-print(contigency_table)
+contigency_table
 ```
 
     ##                           product_type
-    ## brand                      blush bronzer eyebrow eyeliner eyeshadow foundation lip_liner
-    ##   almay                        1       1       0        3         2          3         0
-    ##   alva                         0       0       0        0         1          0         0
-    ##   anna sui                     1       0       0        3         0          0         0
-    ##   annabelle                    1       1       0        7         0          1         1
-    ##   benefit                      0       6      11        3         0          2         0
-    ##   boosh                        0       0       0        0         0          0         0
-    ##   burt's bees                  0       0       0        0         0          0         0
-    ##   butter london                0       0       0        0         0          0         0
-    ##   c'est moi                    0       0       0        1         0          0         1
-    ##   cargo cosmetics              3       9       0        2         1          2         1
-    ##   china glaze                  0       0       0        0         0          0         0
-    ##   clinique                     8       5       6        9        12         34         2
-    ##   coastal classic creation     0       0       0        0         0          0         0
-    ##   colourpop                    0       0       0        0         0          1         1
-    ##   covergirl                    7       2       0       12         5         10         1
-    ##   dalish                       0       0       0        0         0          0         0
-    ##   deciem                       0       0       0        0         0          2         0
-    ##   dior                         5       1       5        6        11          9         0
-    ##   dr. hauschka                 0       3       0        2         2          2         0
-    ##   e.l.f.                       2       5       0        4         6          3         1
-    ##   essie                        0       0       0        0         0          0         0
-    ##   fenty                        0       0       0        1         0          2         0
-    ##   glossier                     1       0       0        0         0          4         0
-    ##   green people                 0       0       0        0         0          0         0
-    ##   iman                         1       0       1        1         2          4         0
-    ##   l'oreal                      2       1       0        9         1          7         2
-    ##   lotus cosmetics usa          1       0       0        0         5          0         0
-    ##   maia's mineral galaxy        0       0       1        0         0          0         0
-    ##   marcelle                     1       2       0        4         1          2         3
-    ##   marienatie                   1       0       0        2         2          1         0
-    ##   maybelline                   4       3       0        8         7         10         1
-    ##   milani                       2       1       0        5         1          1         1
-    ##   mineral fusion               1       1       0        1         0          2         0
-    ##   misa                         0       0       0        0         0          0         0
-    ##   mistura                      0       0       0        0         1          0         0
-    ##   moov                         0       0       0        0         0          0         0
-    ##   nudus                        0       0       0        0         0          0         0
-    ##   nyx                         12       9      18       32         1         32        10
-    ##   orly                         0       0       0        0         0          0         0
-    ##   pacifica                     1       1       0        1         4          0         1
-    ##   penny lane organics          0       0       0        0         0          0         0
-    ##   physicians formula           8       9       0        9         3          8         0
-    ##   piggy paint                  0       0       0        0         0          0         0
-    ##   pure anada                   3       1       0        1         2          4         0
-    ##   rejuva minerals              1       2       0        0         2          1         0
-    ##   revlon                       2       0       0        4         1          7         1
-    ##   sally b's skin yummies       0       0       0        0         1          0         0
-    ##   salon perfect                0       0       0        0         0          0         0
-    ##   sante                        1       0       0        1         1          1         1
-    ##   sinful colours               0       0       0        0         0          0         0
-    ##   smashbox                     3       2       7        6         7          9         0
-    ##   stila                        2       1       0        1         0          0         0
-    ##   suncoat                      0       0       0        1         0          0         0
-    ##   w3llpeople                   0       0       0        0         0          1         0
-    ##   wet n wild                   0       0       0        5         3          0         0
-    ##   zorah                        0       0       0        1         0          0         0
-    ##   zorah biocosmetiques         0       0       0        1         1          0         0
-    ##                           product_type
-    ## brand                      lipstick mascara nail_polish
-    ##   almay                           1       3           0
-    ##   alva                            0       0           0
-    ##   anna sui                        1       0           1
-    ##   annabelle                       0       0           0
-    ##   benefit                        13       6           0
-    ##   boosh                           1       0           0
-    ##   burt's bees                     2       0           0
-    ##   butter london                   1       0           1
-    ##   c'est moi                       1       1           0
-    ##   cargo cosmetics                 2       0           0
-    ##   china glaze                     0       0           1
-    ##   clinique                       17       0           0
-    ##   coastal classic creation        1       0           0
-    ##   colourpop                       2       0           0
-    ##   covergirl                       4      12           1
-    ##   dalish                          1       0           0
-    ##   deciem                          0       0           0
-    ##   dior                           15       8          14
-    ##   dr. hauschka                    2       1           0
-    ##   e.l.f.                          3       3           0
-    ##   essie                           0       0           4
-    ##   fenty                           2       0           0
-    ##   glossier                        1       0           0
-    ##   green people                    0       1           0
-    ##   iman                            1       3           0
-    ##   l'oreal                         7       8           9
-    ##   lotus cosmetics usa             0       1           0
-    ##   maia's mineral galaxy           0       0           0
-    ##   marcelle                        1       1           0
-    ##   marienatie                      2       1           0
-    ##   maybelline                      7      11           3
-    ##   milani                          2       0           0
-    ##   mineral fusion                  1       1           1
-    ##   misa                            0       0           1
-    ##   mistura                         0       0           0
-    ##   moov                            0       0           3
-    ##   nudus                           1       0           0
-    ##   nyx                            39      11           0
-    ##   orly                            0       0           4
-    ##   pacifica                        1       2           2
-    ##   penny lane organics             1       0           0
-    ##   physicians formula              0       6           0
-    ##   piggy paint                     0       0           1
-    ##   pure anada                      1       1           3
-    ##   rejuva minerals                 0       0           0
-    ##   revlon                         11       0           3
-    ##   sally b's skin yummies          1       0           0
-    ##   salon perfect                   0       0           1
-    ##   sante                           0       0           1
-    ##   sinful colours                  0       0           1
-    ##   smashbox                        6       6           0
-    ##   stila                           0       0           0
-    ##   suncoat                         0       1           4
-    ##   w3llpeople                      0       0           0
-    ##   wet n wild                      2       1           1
-    ##   zorah                           0       1           0
-    ##   zorah biocosmetiques            0       0           0
+    ## brand                      blush bronzer eyebrow eyeliner eyeshadow foundation lip_liner lipstick mascara nail_polish
+    ##   almay                        1       1       0        3         2          3         0        1       3           0
+    ##   alva                         0       0       0        0         1          0         0        0       0           0
+    ##   anna sui                     1       0       0        3         0          0         0        1       0           1
+    ##   annabelle                    1       1       0        7         0          1         1        0       0           0
+    ##   benefit                      0       6      11        3         0          2         0       13       6           0
+    ##   boosh                        0       0       0        0         0          0         0        1       0           0
+    ##   burt's bees                  0       0       0        0         0          0         0        2       0           0
+    ##   butter london                0       0       0        0         0          0         0        1       0           1
+    ##   c'est moi                    0       0       0        1         0          0         1        1       1           0
+    ##   cargo cosmetics              3       9       0        2         1          2         1        2       0           0
+    ##   china glaze                  0       0       0        0         0          0         0        0       0           1
+    ##   clinique                     8       5       6        9        12         34         2       17       0           0
+    ##   coastal classic creation     0       0       0        0         0          0         0        1       0           0
+    ##   colourpop                    0       0       0        0         0          1         1        2       0           0
+    ##   covergirl                    7       2       0       12         5         10         1        4      12           1
+    ##   dalish                       0       0       0        0         0          0         0        1       0           0
+    ##   deciem                       0       0       0        0         0          2         0        0       0           0
+    ##   dior                         5       1       5        6        11          9         0       15       8          14
+    ##   dr. hauschka                 0       3       0        2         2          2         0        2       1           0
+    ##   e.l.f.                       2       5       0        4         6          3         1        3       3           0
+    ##   essie                        0       0       0        0         0          0         0        0       0           4
+    ##   fenty                        0       0       0        1         0          2         0        2       0           0
+    ##   glossier                     1       0       0        0         0          4         0        1       0           0
+    ##   green people                 0       0       0        0         0          0         0        0       1           0
+    ##   iman                         1       0       1        1         2          4         0        1       3           0
+    ##   l'oreal                      2       1       0        9         1          7         2        7       8           9
+    ##   lotus cosmetics usa          1       0       0        0         5          0         0        0       1           0
+    ##   maia's mineral galaxy        0       0       1        0         0          0         0        0       0           0
+    ##   marcelle                     1       2       0        4         1          2         3        1       1           0
+    ##   marienatie                   1       0       0        2         2          1         0        2       1           0
+    ##   maybelline                   4       3       0        8         7         10         1        7      11           3
+    ##   milani                       2       1       0        5         1          1         1        2       0           0
+    ##   mineral fusion               1       1       0        1         0          2         0        1       1           1
+    ##   misa                         0       0       0        0         0          0         0        0       0           1
+    ##   mistura                      0       0       0        0         1          0         0        0       0           0
+    ##   moov                         0       0       0        0         0          0         0        0       0           3
+    ##   nudus                        0       0       0        0         0          0         0        1       0           0
+    ##   nyx                         12       9      18       32         1         32        10       39      11           0
+    ##   orly                         0       0       0        0         0          0         0        0       0           4
+    ##   pacifica                     1       1       0        1         4          0         1        1       2           2
+    ##   penny lane organics          0       0       0        0         0          0         0        1       0           0
+    ##   physicians formula           8       9       0        9         3          8         0        0       6           0
+    ##   piggy paint                  0       0       0        0         0          0         0        0       0           1
+    ##   pure anada                   3       1       0        1         2          4         0        1       1           3
+    ##   rejuva minerals              1       2       0        0         2          1         0        0       0           0
+    ##   revlon                       2       0       0        4         1          7         1       11       0           3
+    ##   sally b's skin yummies       0       0       0        0         1          0         0        1       0           0
+    ##   salon perfect                0       0       0        0         0          0         0        0       0           1
+    ##   sante                        1       0       0        1         1          1         1        0       0           1
+    ##   sinful colours               0       0       0        0         0          0         0        0       0           1
+    ##   smashbox                     3       2       7        6         7          9         0        6       6           0
+    ##   stila                        2       1       0        1         0          0         0        0       0           0
+    ##   suncoat                      0       0       0        1         0          0         0        0       1           4
+    ##   w3llpeople                   0       0       0        0         0          1         0        0       0           0
+    ##   wet n wild                   0       0       0        5         3          0         0        2       1           1
+    ##   zorah                        0       0       0        1         0          0         0        0       1           0
+    ##   zorah biocosmetiques         0       0       0        1         1          0         0        0       0           0
 
 ## Two_way contingency table filtering using function
 
@@ -430,53 +371,42 @@ contingency_data <- all_USD_product[, c("product_type", "brand")]
 contingency_table <- table(contingency_data)
 
 # Print the contingency table
-print(contingency_table)
+contingency_table
 ```
 
     ##             brand
-    ## product_type alva c'est moi clinique coastal classic creation fenty glossier green people
-    ##   blush         0         0        7                        0     0        1            0
-    ##   bronzer       0         0        5                        0     0        0            0
-    ##   eyebrow       0         0        6                        0     0        0            0
-    ##   eyeliner      0         1        9                        0     1        0            0
-    ##   eyeshadow     1         0       12                        0     0        0            0
-    ##   foundation    0         0       34                        0     2        4            0
-    ##   lip_liner     0         1        2                        0     0        0            0
-    ##   lipstick      0         1       17                        1     2        1            0
-    ##   mascara       0         1        0                        0     0        0            1
+    ## product_type alva c'est moi clinique coastal classic creation fenty glossier green people lotus cosmetics usa
+    ##   blush         0         0        7                        0     0        1            0                   1
+    ##   bronzer       0         0        5                        0     0        0            0                   0
+    ##   eyebrow       0         0        6                        0     0        0            0                   0
+    ##   eyeliner      0         1        9                        0     1        0            0                   0
+    ##   eyeshadow     1         0       12                        0     0        0            0                   5
+    ##   foundation    0         0       34                        0     2        4            0                   0
+    ##   lip_liner     0         1        2                        0     0        0            0                   0
+    ##   lipstick      0         1       17                        1     2        1            0                   0
+    ##   mascara       0         1        0                        0     0        0            1                   1
     ##             brand
-    ## product_type lotus cosmetics usa maia's mineral galaxy marienatie nudus nyx
-    ##   blush                        1                     0          1     0   9
-    ##   bronzer                      0                     0          0     0   7
-    ##   eyebrow                      0                     1          0     0  18
-    ##   eyeliner                     0                     0          2     0  31
-    ##   eyeshadow                    5                     0          2     0   0
-    ##   foundation                   0                     0          1     0  29
-    ##   lip_liner                    0                     0          0     0   6
-    ##   lipstick                     0                     0          2     1  36
-    ##   mascara                      1                     0          1     0  11
+    ## product_type maia's mineral galaxy marienatie nudus nyx penny lane organics rejuva minerals sally b's skin yummies
+    ##   blush                          0          1     0   9                   0               1                      0
+    ##   bronzer                        0          0     0   7                   0               2                      0
+    ##   eyebrow                        1          0     0  18                   0               0                      0
+    ##   eyeliner                       0          2     0  31                   0               0                      0
+    ##   eyeshadow                      0          2     0   0                   0               2                      1
+    ##   foundation                     0          1     0  29                   0               1                      0
+    ##   lip_liner                      0          0     0   6                   0               0                      0
+    ##   lipstick                       0          2     1  36                   1               0                      1
+    ##   mascara                        0          1     0  11                   0               0                      0
     ##             brand
-    ## product_type penny lane organics rejuva minerals sally b's skin yummies w3llpeople
-    ##   blush                        0               1                      0          0
-    ##   bronzer                      0               2                      0          0
-    ##   eyebrow                      0               0                      0          0
-    ##   eyeliner                     0               0                      0          0
-    ##   eyeshadow                    0               2                      1          0
-    ##   foundation                   0               1                      0          1
-    ##   lip_liner                    0               0                      0          0
-    ##   lipstick                     1               0                      1          0
-    ##   mascara                      0               0                      0          0
-    ##             brand
-    ## product_type zorah biocosmetiques
-    ##   blush                         0
-    ##   bronzer                       0
-    ##   eyebrow                       0
-    ##   eyeliner                      1
-    ##   eyeshadow                     1
-    ##   foundation                    0
-    ##   lip_liner                     0
-    ##   lipstick                      0
-    ##   mascara                       0
+    ## product_type w3llpeople zorah biocosmetiques
+    ##   blush               0                    0
+    ##   bronzer             0                    0
+    ##   eyebrow             0                    0
+    ##   eyeliner            0                    1
+    ##   eyeshadow           0                    1
+    ##   foundation          1                    0
+    ##   lip_liner           0                    0
+    ##   lipstick            0                    0
+    ##   mascara             0                    0
 
 ## Stacked_bar_plot
 
@@ -500,7 +430,7 @@ stacked_bar_plot <- ggplot(my_data_filtered, aes(x = product_type, fill = curren
   scale_fill_brewer(palette = "Set1", type = "qual", direction = 1)  # Choose "Set1" with three colors
 
 # Print the stacked bar plot
-print(stacked_bar_plot)
+stacked_bar_plot
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
@@ -528,7 +458,7 @@ violin_plot <- ggplot(my_data_filtered, aes(x = product_type, y = as.numeric(pri
        x = "Product type", y = "Price")
 
 # Print the violin plot
-print(violin_plot)
+violin_plot
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
@@ -553,7 +483,7 @@ my_data_filtered <- query_API[!is.na(query_API$price) & !is.na(query_API$product
    facet_wrap(~product_type)
  
  # Print the histogram
-print(histogram_plot)
+histogram_plot
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-18-1.png)<!-- --> \# End of
