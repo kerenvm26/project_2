@@ -13,91 +13,76 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 # Introduction
 
-This vignette provides a hands-on demonstration of data exploration using an API. In this case, I have utilized the "Makeup" API database to gain insights into the makeup market of various brands in the United States, Canada, and the United Kingdom. To make this exploration effective, I have created a set of custom functions that help to fetch data from the API and select relevant information. With this data in hand, I embarked on a journey of data exploration, examining how makeup product prices vary across different markets, brands, and types of makeup products. Let's dive into the details and uncover the insights!
-
 # Required Packages
 
-I have made use of the below list set of packages to interact with the Makeup API and to manipulate and summarize the data. 
-
 ```{r}
-library(jsonlite)  # To interact with API
-library(tidyverse) # To manipulate data
-library(dplyr)     # To manipulate data
-library(ggplot2)   # To plot summaries
+library(httr)
+library(jsonlite)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
 ```
+
 
 # Functions to Interact with the API
 
-Querying the selected API, **Makeup**!
-```{r}
-query_API <- fromJSON("http://makeup-api.herokuapp.com/api/v1/products.json")
-```
-
-_Let's begin by defining the set of functions created for interacting with the Makeup API!_
-
-## 1. product_type function
-
-This function is designed to retrieve all rows of products where the product type matches the user's input called "type" and has "all" value as a default. This function also considers the need for excluding all products where product type is missing, it means, product type = NA. 
+## 1. Products based on product_type:
 
 ```{r}
 product_type <- function(type="all") {
   
-    #Retrieve API
     query_API <- fromJSON("http://makeup-api.herokuapp.com/api/v1/products.json")
     
-    #Filter products by the specified product_type removing NA values
+    #Filter products by the specified product_type
     filtered_products <- query_API[!is.na(query_API$product_type) & query_API$product_type == type, ]
-    
-    #Output
     return(filtered_products)
 }
   
 ```
 
-To test the product_type function, I requested the function to provide all products related to mascara, foundation, and nail polish, each separately.
-
+To test product_prices_by_product_type function 
 ```{r}
 mascara <- product_type("mascara")
+mascara
+
 foundation <- product_type("foundation")
+foundation
+
 nail_polish <- product_type("nail_polish")
+nail_polish
 
 ```
 
-## 2. product_currency function
-
-This function is designed to retrieve all rows of products where the currency of product matches the user's input called "currency" and has "all" value as a default. This function also considers the need for excluding all products where product currency is missing, it means, product type = NA. 
+## 2. Product prices based on currency
 
 ```{r}
-product_currency <- function(currency="all") {
-    
-    #Retrieve API
+product_prices_by_currency <- function(currency) {
+  
     query_API <- fromJSON("http://makeup-api.herokuapp.com/api/v1/products.json")
     
-    #Filter products by the specified currency removing NA values
+    #Filter products by the specified currency
     filtered_products <- query_API[!is.na(query_API$currency) & query_API$currency == currency, ]
-    
-    #Output
     return(filtered_products)
 }
 ```
 
-To test the product_currency function, I requested the function to provide all products related to CAD, USD and GBP currency, each separately.
+To test product_prices_by_currency function 
 ```{r}
-CAD_prices <- product_currency("CAD")
-USD_prices <- product_currency("USD")
-GBP_prices <- product_currency("GBP")
+CAD_prices <- product_prices_by_currency("CAD")
+CAD_prices
 
+USD_prices <- product_prices_by_currency("USD")
+USD_prices 
+
+GBP_prices <- product_prices_by_currency("GBP")
+GBP_prices
 ```
 
-## 3. product_tag function
-
-This function is designed to first split the tag_list vector (all tags available on product package), and retrieve all rows of products where any of the new columns with product tag matches the user's input called "tag" and has "all" value as a default. 
+## 3. Products based on product tag:
 
 ```{r}
 
 product_tag <- function(tag="all") {
-  
-  #Retrieve API
   query_API <- fromJSON("http://makeup-api.herokuapp.com/api/v1/products.json")
 
   # Split the tag_list into separate columns
@@ -107,130 +92,101 @@ product_tag <- function(tag="all") {
   # Filter rows where any of the columns contains the specified tag
   filtered_products <- query_API2 %>%
     filter_at(vars(starts_with("Tag")), any_vars(. == tag))
-  
-  #Output
+
   return(filtered_products)
 }
 ```
 
-To test the product_tag function, I requested the function to provide all products related to Vegan, Canadian, and Natural product tag, each separately.
-
+To test product_tag function
 ```{r}
 Vegan_products <- product_tag("Vegan")
+Vegan_products
+
 Canadian_products <- product_tag("Canadian")
+Canadian_products
+
 Natural_products <- product_tag("Natural")
+Natural_products
 ```
 
-## 4. product_brand_type function
-
-This function is designed to retrieve all rows of products where brand and product type matches the user's inputs called "brand" and "type". Both inputs with value "all" as default.
-
+## 4. Products based on brand and product type
 ```{r}
-product_brand_type <- function(brand="all", type="all") {
-    
-    #Retrieve API
+product_brand_type <- function(brand, type="all") {
+  
     query_API <- fromJSON("http://makeup-api.herokuapp.com/api/v1/products.json")
     
     #Filter products by the specified brand and type
     filtered_products <- query_API[!is.na(query_API$brand) & query_API$brand == brand & !is.na(query_API$product_type) & query_API$product_type == type, ]
-    
-    #Output
     return(filtered_products)
 }
 ```
 
-To test the product_brand_type function, I requested the function to provide all foundations by deciem, mascaras by nyx, blushes by mabelline, each separately.
-
+To test product_prices_by_currency function 
 ```{r}
 deciem_foundation <- product_brand_type("deciem", "foundation" )
+deciem_foundation
+
 nyx_mascara <- product_brand_type("nyx", "mascara")
+nyx_mascara
+
 mabelline_blush <- product_brand_type("maybelline", "blush")
+mabelline_blush
 ```
 
-## 5-6. product_brand_type_price function
-
-This function is designed to retrieve all rows of products where brand, product type and price matches the user's inputs called "brand", "type", "price_operator", and "price_value". Price_operator can be greater or lower to identify products with price greater/lower and equal to the specified price_value. Brand and type are inputs with value "all" as default.
-
+## 5-6. Products based on brand, product type and price (greater/lower and equal to)
 
 ```{r}
-product_brand_type_price <- function(brand= "all", type="all", price_operator, price_value) {
-    
-    #Retrieve API
+product_brand_type_price <- function(brand, type="all", price_operator, price_value) {
+  
     query_API <- fromJSON("http://makeup-api.herokuapp.com/api/v1/products.json")
 
-    #Filter products by the specified brand, product_type, price_operator and price_value removing NA values
     filtered_data <- query_API[!is.na(query_API$brand) & query_API$brand == brand & !is.na(query_API$product_type) & query_API$product_type == type, ]
-        if (price_operator == 'greater') {
+    
+    if (price_operator == 'greater') {
     filtered_data <- filtered_data[!is.na(filtered_data$price) & filtered_data$price >= as.numeric(price_value), ]
      }
     else if (price_operator == 'lower') {
     filtered_data <- filtered_data[!is.na(filtered_data$price) & filtered_data$price <= as.numeric(price_value), ]
     }
   
-    #Output
   return(filtered_data)
 }
 ```
 
-To test the product_brand_type_price function, I requested the function to provide all lipstick by colourpop with price greater and equal to 5.
-
+To test  function 
 ```{r}
 colourpop_lipstick_price <- product_brand_type_price("colourpop", "lipstick", "greater", "5")
+colourpop_lipstick_price
 ```
 
 # Exploratory Data Analysis (EDA): Summarizing data from an API
 
-I wanted to try to find insights/answers to the following questions: 
-
+Questions:  
   1. What are the type of make-up products and brand with more options?
-  2. What are the type of make-up products more expensive?
+  2. What are the type of make-up products and brand more expensive?
   3. What about within USA market and others?
 
-To achieve this, the following summaries plot were deployed
   
-## One_way contingency table
-
-This contingency table aims to know what are those products that have more options in the market. Based on the output, it is noticed that foundations and lipstick head the product types followed by eyeliner, mascara, etc.
-
+# One_way contengency table
 ```{r}
-# Select database
 all_product_type <- query_API
-
-# Select columns for the contingency table
 contigency_data <- all_product_type[,"product_type"]
-
-# Create a contingency table
 contigency_table <- table(contigency_data)
-
-# Print the contingency table
 print(contigency_table)
 ```
 
-## Two_way contingency table
-
-Now, I was curious to find out which brands have the most extensive range of products and are leading the market with a significant number of options. Based on the output, it is noticed that nyx is the brand with more products available in the market follow by clinique, maybelline and dior.
-
+## Two_way contengency table
 ```{r}
-# Select database
 all_product_type <- query_API
-
-# Select columns for the contingency table
 contigency_data <- all_product_type[,c("brand","product_type")]
-
-# Create a contingency table
 contigency_table <- table(contigency_data)
-
-# Print the contingency table
 print(contigency_table)
 ```
 
-## Two_way contingency table filtering using function
-
-By doing the same two_way contingency table but now filtering USD market, it is noticed that in USD market the leading brands are nyx and clinique for all product type including the most available in the market.
-
+#Two_way contengency table filtering using function
 ```{r}
 # Select columns for the contingency table (brand and tag columns)
-all_USD_product <- product_currency("USD")
+all_USD_product <- product_prices_by_currency("USD")
 contingency_data <- all_USD_product[, c("product_type", "brand")]
 
 # Create a contingency table
@@ -240,12 +196,8 @@ contingency_table <- table(contingency_data)
 print(contingency_table)
 ```
 
-## Stacked_bar_plot 
-
-To understand the contribution of each market in the Makeup API, it was important to identify how it is the distribution of product types across Canada, United States, and United Kingdom. To achieve this, a stacked bar plot were performed to acount for all products depending on their type and currency. It is noticed that the biggest contributions corresponding to USD products, followed by United Kingdom and lastly Canada. 
-
+# Stacked_bar_plot 
 ```{r}
-# Filter data to avoid NA values within currency and product_type
 my_data_filtered <- query_API[!is.na(query_API$currency) & !is.na(query_API$product_type), ]
 
 # Create a stacked bar plot with a custom color palette
@@ -259,18 +211,13 @@ stacked_bar_plot <- ggplot(my_data_filtered, aes(x = product_type, fill = curren
 print(stacked_bar_plot)
 ```
 
-## Violin plot
-
-Regarding price, I wanted to know what are the products that have the highest price and how the price is distributed. To achieve this, I performed a violin plot of prices for each of the product type available in the market. The results show the products with higher prices have a more spread distribution when compared with product with product with lower price. To ilustrate, bronzer vs. lipstick. I could conclude that eyeshadow, bronzer, eyebrow, and foundation are the product types with more costly options.
+# Violin plot
 
 ```{r}
-# Filter data to avoid NA values within price and product_type
 my_data_filtered <- query_API[!is.na(query_API$price) & !is.na(query_API$product_type), ]
 
-# Create a violin plot with a custom color palette
-violin_plot <- ggplot(my_data_filtered, aes(x = product_type, y = as.numeric(price), fill = product_type)) +
+violin_plot <- ggplot(my_data_filtered, aes(x = product_type, y = as.numeric(price))) +
   geom_violin() +
-  scale_fill_manual(values = c("red", "blue", "green", "purple", "orange", "pink", "navy", "yellow", "brown", "darkgreen"))+  # Specify custom colors
   labs(title = "Violin Plot of Prices by Product type",
        x = "Product type", y = "Price")
 
@@ -279,22 +226,16 @@ print(violin_plot)
 
 ```
 
-## Histogram
-
-To see the last results in a different way, I performed a histogram of prices for each of the product type available in the market. Looking these results, the order seems to be clearer, bronzer has the most expensive options in the market followed by eyeshadom, eyebrow and lastly foundation.
-
+# Print the histogram
 ```{r}
-# Filter data to avoid NA values within price and product_type
 my_data_filtered <- query_API[!is.na(query_API$price) & !is.na(query_API$product_type), ]
 
   # Create a single boxplot for prices without faceting
-  histogram_plot <- ggplot(my_data_filtered, aes(x = as.numeric(price), fill = product_type)) +
+  histogram_plot <- ggplot(my_data_filtered, aes(x = as.numeric(price))) +
   geom_histogram() +
-     scale_fill_manual(values = c("red", "blue", "green", "purple", "orange", "pink", "navy", "yellow", "brown", "darkgreen"))+  # Specify custom colors
  labs(title = "Histogram of Prices Faceted by Product Type", x = "Price", y= "Counts")+
    facet_wrap(~product_type)
  
  # Print the histogram
 print(histogram_plot)
 ```
-# End of the Project 2
