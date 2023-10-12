@@ -1,4 +1,4 @@
-Contacting an API
+Project_2: Contacting an API
 ================
 Keren Vivas
 2023-10-06
