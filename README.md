@@ -1,7 +1,7 @@
 Project_2: Contacting an API
 ================
 Keren Vivas
-2023-10-11
+2023-10-12
 
 - <a href="#introduction" id="toc-introduction">Introduction</a>
 - <a href="#required-packages" id="toc-required-packages">Required
@@ -73,59 +73,112 @@ mascara <- product_type("mascara")
 mascara
 ```
 
-    ##       id               brand                                                                     name price price_sign currency
-    ## 24  1025          marienatie                                                     Perfect Lash Mascara   0.0          $      USD
-    ## 31  1018 lotus cosmetics usa                                                                  Mascara   0.0          $      USD
-    ## 38  1011        green people                                                       Volumising Mascara   0.0          $      USD
-    ## 41  1008           c'est moi                                                             Muse Mascara   0.0          $      USD
-    ## 51   998                 nyx                                                      Fly With Me Mascara   9.0          $      USD
-    ## 52   997                 nyx                                                   Propel My Eyes Mascara   9.0          $      USD
-    ## 53   996                 nyx                                    Proof It! Waterproof Mascara Top Coat   7.0          $      USD
-    ## 54   995                 nyx                                                   Big & Loud Lash Primer   7.0          $      USD
-    ## 55   994                 nyx                                                   Double Stacked Mascara  15.0          $      USD
-    ## 56   993                 nyx                                                         Doll Eye Mascara   9.5          $      USD
-    ## 57   992                 nyx                                                       The Skinny Mascara   7.0          $      USD
-    ## 58   991                 nyx                          Worth the Hype Volumizing & Lengthening Mascara   8.0          $      USD
-    ## 59   990                 nyx                                               Boudoir Mascara Collection   6.0          $      USD
-    ## 60   989                 nyx                                                            Color Mascara   7.0          $      USD
-    ## 61   988                 nyx                                                   Super Luscious Mascara   7.0          $      USD
-    ## 321  706                dior                                                          Diorshow Iconic  25.5          £      GBP
-    ## 322  705                dior                                                 Diorshow Iconic Overcurl  25.5          £      GBP
-    ## 323  704                dior                                                      Dior Addict It-Lash  25.5          £      GBP
-    ## 324  703                dior                                                        Diorshow New Look  25.5          £      GBP
-    ## 325  702                dior                                                       Diorshow Black Out  25.5          £      GBP
-    ## 326  701                dior                                                                 DIORSHOW  25.5          £      GBP
-    ## 327  700                dior                                                   DIORSHOW PUMP'N'VOLUME  25.5          £      GBP
-    ## 328  699                dior                                                    Diorshow Maximizer 3D  25.5          £      GBP
-    ## 376  651                iman                                               Volumize Mascara Black Ink  <NA>       <NA>     <NA>
-    ## 377  650                iman                                                    Perfect Mascara Black  <NA>       <NA>     <NA>
-    ## 378  649                iman                                                Amplify Mascara Black Ink  <NA>       <NA>     <NA>
-    ## 415  611             benefit                                                BADgal waterproof mascara  26.0       <NA>     <NA>
-    ## 416  610             benefit                                   they're real! lengthening mascara mini  16.0       <NA>     <NA>
-    ## 417  609             benefit                                           BADgal lash volumizing mascara  26.0       <NA>     <NA>
-    ## 418  608             benefit                                             roller lash curling mascara   31.0       <NA>     <NA>
-    ## 419  607             benefit                                       they're real! lengthening mascara   31.0       <NA>     <NA>
-    ## 420  606             benefit                                      they're real! tinted eyelash primer  31.0       <NA>     <NA>
-    ## 442  542            smashbox                                                        Hyperlash Mascara  23.0       <NA>     <NA>
-    ## 443  541            smashbox                                         Full Exposure Waterproof Mascara  22.0       <NA>     <NA>
-    ## 444  540            smashbox                                                    Full Exposure Mascara  22.0       <NA>     <NA>
-    ## 445  539            smashbox                                                Indecent Exposure Mascara  22.0       <NA>     <NA>
-    ## 446  538            smashbox                                                          X-Rated Mascara  22.0       <NA>     <NA>
-    ## 447  537            smashbox                                                 Photo Finish Lash Primer  22.0       <NA>     <NA>
-    ## 878   54      mineral fusion                                       Mineral Fusion Lengthening Mascara  19.0       <NA>     <NA>
-    ## 879   53           covergirl                   CoverGirl Professional Mascara Curved Brush Very Black  6.99       <NA>     <NA>
-    ## 880   52           covergirl                  CoverGirl Professional Mascara Curved Brush Black Brown  6.99       <NA>     <NA>
-    ## 881   51             l'oreal                L'Oreal Paris Voluminous Butterfly Midnight Black Mascara 13.49       <NA>     <NA>
-    ## 882   50               zorah                                                  Zorah Mascara Lengthing  27.0       <NA>     <NA>
-    ## 883   49           covergirl                      CoverGirl LashBlast Fusion Water Resistant Mascara   9.99       <NA>     <NA>
-    ## 884   48  physicians formula Physicians Formula Eye Booster Instant Lash Extension Kit in Ultra Black 19.99       <NA>     <NA>
-    ## 885   47             l'oreal                  L'Oreal Paris Voluminous Million Lashes Excess Mascara  13.99       <NA>     <NA>
-    ## 886   46           covergirl               CoverGirl LastBlast Clump Crusher Water Resistant Mascara   9.99       <NA>     <NA>
-    ## 887   45               almay                                 Almay Intense i-Color Volumizing Mascara 10.99       <NA>     <NA>
-    ## 888   44           covergirl             CoverGirl LashBlast Full Lash Bloom Mascara Very Black (800)  9.99       <NA>     <NA>
-    ## 889   43           covergirl               CoverGirl Professional Super Thick Lash Mascara Very Black  6.99       <NA>     <NA>
-    ## 890   42          maybelline                        Maybelline Volum'Express Falsies Big Eyes Mascara 12.99       <NA>     <NA>
-    ## 891   41             l'oreal                              L'Oreal Paris Voluminous Butterfly Mascara  13.49       <NA>     <NA>
+    ##       id               brand                                                                     name price price_sign
+    ## 24  1025          marienatie                                                     Perfect Lash Mascara   0.0          $
+    ## 31  1018 lotus cosmetics usa                                                                  Mascara   0.0          $
+    ## 38  1011        green people                                                       Volumising Mascara   0.0          $
+    ## 41  1008           c'est moi                                                             Muse Mascara   0.0          $
+    ## 51   998                 nyx                                                      Fly With Me Mascara   9.0          $
+    ## 52   997                 nyx                                                   Propel My Eyes Mascara   9.0          $
+    ## 53   996                 nyx                                    Proof It! Waterproof Mascara Top Coat   7.0          $
+    ## 54   995                 nyx                                                   Big & Loud Lash Primer   7.0          $
+    ## 55   994                 nyx                                                   Double Stacked Mascara  15.0          $
+    ## 56   993                 nyx                                                         Doll Eye Mascara   9.5          $
+    ## 57   992                 nyx                                                       The Skinny Mascara   7.0          $
+    ## 58   991                 nyx                          Worth the Hype Volumizing & Lengthening Mascara   8.0          $
+    ## 59   990                 nyx                                               Boudoir Mascara Collection   6.0          $
+    ## 60   989                 nyx                                                            Color Mascara   7.0          $
+    ## 61   988                 nyx                                                   Super Luscious Mascara   7.0          $
+    ## 321  706                dior                                                          Diorshow Iconic  25.5          £
+    ## 322  705                dior                                                 Diorshow Iconic Overcurl  25.5          £
+    ## 323  704                dior                                                      Dior Addict It-Lash  25.5          £
+    ## 324  703                dior                                                        Diorshow New Look  25.5          £
+    ## 325  702                dior                                                       Diorshow Black Out  25.5          £
+    ## 326  701                dior                                                                 DIORSHOW  25.5          £
+    ## 327  700                dior                                                   DIORSHOW PUMP'N'VOLUME  25.5          £
+    ## 328  699                dior                                                    Diorshow Maximizer 3D  25.5          £
+    ## 376  651                iman                                               Volumize Mascara Black Ink  <NA>       <NA>
+    ## 377  650                iman                                                    Perfect Mascara Black  <NA>       <NA>
+    ## 378  649                iman                                                Amplify Mascara Black Ink  <NA>       <NA>
+    ## 415  611             benefit                                                BADgal waterproof mascara  26.0       <NA>
+    ## 416  610             benefit                                   they're real! lengthening mascara mini  16.0       <NA>
+    ## 417  609             benefit                                           BADgal lash volumizing mascara  26.0       <NA>
+    ## 418  608             benefit                                             roller lash curling mascara   31.0       <NA>
+    ## 419  607             benefit                                       they're real! lengthening mascara   31.0       <NA>
+    ## 420  606             benefit                                      they're real! tinted eyelash primer  31.0       <NA>
+    ## 442  542            smashbox                                                        Hyperlash Mascara  23.0       <NA>
+    ## 443  541            smashbox                                         Full Exposure Waterproof Mascara  22.0       <NA>
+    ## 444  540            smashbox                                                    Full Exposure Mascara  22.0       <NA>
+    ## 445  539            smashbox                                                Indecent Exposure Mascara  22.0       <NA>
+    ## 446  538            smashbox                                                          X-Rated Mascara  22.0       <NA>
+    ## 447  537            smashbox                                                 Photo Finish Lash Primer  22.0       <NA>
+    ## 878   54      mineral fusion                                       Mineral Fusion Lengthening Mascara  19.0       <NA>
+    ## 879   53           covergirl                   CoverGirl Professional Mascara Curved Brush Very Black  6.99       <NA>
+    ## 880   52           covergirl                  CoverGirl Professional Mascara Curved Brush Black Brown  6.99       <NA>
+    ## 881   51             l'oreal                L'Oreal Paris Voluminous Butterfly Midnight Black Mascara 13.49       <NA>
+    ## 882   50               zorah                                                  Zorah Mascara Lengthing  27.0       <NA>
+    ## 883   49           covergirl                      CoverGirl LashBlast Fusion Water Resistant Mascara   9.99       <NA>
+    ## 884   48  physicians formula Physicians Formula Eye Booster Instant Lash Extension Kit in Ultra Black 19.99       <NA>
+    ## 885   47             l'oreal                  L'Oreal Paris Voluminous Million Lashes Excess Mascara  13.99       <NA>
+    ## 886   46           covergirl               CoverGirl LastBlast Clump Crusher Water Resistant Mascara   9.99       <NA>
+    ## 887   45               almay                                 Almay Intense i-Color Volumizing Mascara 10.99       <NA>
+    ## 888   44           covergirl             CoverGirl LashBlast Full Lash Bloom Mascara Very Black (800)  9.99       <NA>
+    ## 889   43           covergirl               CoverGirl Professional Super Thick Lash Mascara Very Black  6.99       <NA>
+    ## 890   42          maybelline                        Maybelline Volum'Express Falsies Big Eyes Mascara 12.99       <NA>
+    ## 891   41             l'oreal                              L'Oreal Paris Voluminous Butterfly Mascara  13.49       <NA>
+    ##     currency
+    ## 24       USD
+    ## 31       USD
+    ## 38       USD
+    ## 41       USD
+    ## 51       USD
+    ## 52       USD
+    ## 53       USD
+    ## 54       USD
+    ## 55       USD
+    ## 56       USD
+    ## 57       USD
+    ## 58       USD
+    ## 59       USD
+    ## 60       USD
+    ## 61       USD
+    ## 321      GBP
+    ## 322      GBP
+    ## 323      GBP
+    ## 324      GBP
+    ## 325      GBP
+    ## 326      GBP
+    ## 327      GBP
+    ## 328      GBP
+    ## 376     <NA>
+    ## 377     <NA>
+    ## 378     <NA>
+    ## 415     <NA>
+    ## 416     <NA>
+    ## 417     <NA>
+    ## 418     <NA>
+    ## 419     <NA>
+    ## 420     <NA>
+    ## 442     <NA>
+    ## 443     <NA>
+    ## 444     <NA>
+    ## 445     <NA>
+    ## 446     <NA>
+    ## 447     <NA>
+    ## 878     <NA>
+    ## 879     <NA>
+    ## 880     <NA>
+    ## 881     <NA>
+    ## 882     <NA>
+    ## 883     <NA>
+    ## 884     <NA>
+    ## 885     <NA>
+    ## 886     <NA>
+    ## 887     <NA>
+    ## 888     <NA>
+    ## 889     <NA>
+    ## 890     <NA>
+    ## 891     <NA>
     ##                                                                                                                                                                                                                                                         image_link
     ## 24                                                                                                                                                                        https://www.purpicks.com/wp-content/uploads/2017/06/marie-natie-perfect-lash-mascara.png
     ## 31                                                                                                                                                                       https://www.purpicks.com/wp-content/uploads/2018/03/lotus-cosmetics-usa-mascara-black.png
@@ -338,112 +391,112 @@ mascara
     ## 889                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Get beautiful, thick, high-impact lashes with COVERGIRL professional super thick lash mascara! The brush separates, defines, and reaches those little lashes so you get bold, defined lashes so easy, so beautiful!Features:Bold, defined volumeSeparates and defines lashesLasts all dayApplication Tips: Hold brush as close as possible to base of lashes, and wiggle it as you move it up through lashes.
     ## 890                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    2 brushes. 2x more impact!Now get bigger eyes with 360 degrees of false \nlash glam volume! Upper lashes get over-the-top glam with the upper \nbrush, while the lower brush grabs every tiny lower lash for a full \ncircle effect.For best results: Apply the Upper Brush against the top lid lashes and sweep from\n root to tip until a clean, voluminous look is achieved, followed by the\n lower lash line using the lower Micro Brush. Do not let dry between \ncoats. Removes easily with soap and water or with Maybelline® Clean \nExpress!™ Classic Eye Makeup Remover.\n
     ## 891                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Stretch and extend your lashes like wings!  Introducing Voluminous \nButterfly Mascara, one of L'Oreal's most-exciting mascara innovations, yet. \nIts revolutionary Butterfly Brush™ with asymmetrical lash \nline shape extends and lifts outer corner lashes to give you a \nwinged-out effect, instantly volumizing lashes at the roots and \nstretching lashes outward. The unique Cocoon Fibers™ instantly wrap lashes in a soft, delicate veil to create silky, spectacular lashes that flutter.
-    ##     rating category product_type                                        tag_list               created_at               updated_at
-    ## 24      NA               mascara                             purpicks, CertClean 2018-06-30T19:19:31.192Z 2018-09-02T22:52:06.828Z
-    ## 31      NA               mascara                 purpicks, USDA Organic, Organic 2018-06-30T19:19:30.735Z 2018-09-02T22:52:06.816Z
-    ## 38      NA               mascara                               purpicks, EcoCert 2018-06-30T19:19:30.303Z 2018-09-02T22:52:06.581Z
-    ## 41      NA               mascara purpicks, EWG Verified, Hypoallergenic, No Talc 2018-06-30T19:19:30.056Z 2018-09-02T22:52:06.553Z
-    ## 51      NA     <NA>      mascara                                                 2017-12-24T02:33:07.960Z 2017-12-24T02:33:08.735Z
-    ## 52      NA     <NA>      mascara                                                 2017-12-24T02:33:07.488Z 2017-12-24T02:33:07.828Z
-    ## 53      NA     <NA>      mascara                                                 2017-12-24T02:33:06.827Z 2017-12-24T02:33:07.353Z
-    ## 54      NA     <NA>      mascara                                                 2017-12-24T02:33:06.023Z 2017-12-24T02:33:06.430Z
-    ## 55      NA     <NA>      mascara                                                 2017-12-24T02:33:05.545Z 2017-12-24T02:33:05.848Z
-    ## 56      NA     <NA>      mascara                                                 2017-12-24T02:33:04.665Z 2017-12-24T02:33:05.096Z
-    ## 57      NA     <NA>      mascara                                                 2017-12-24T02:33:02.793Z 2017-12-24T02:33:04.446Z
-    ## 58      NA     <NA>      mascara                                                 2017-12-24T02:33:02.251Z 2017-12-24T02:33:02.648Z
-    ## 59      NA     <NA>      mascara                                                 2017-12-24T02:33:00.623Z 2017-12-24T02:33:01.097Z
-    ## 60      NA     <NA>      mascara                                                 2017-12-24T02:32:59.193Z 2017-12-24T02:32:59.610Z
-    ## 61      NA     <NA>      mascara                                                 2017-12-24T02:32:57.547Z 2017-12-24T02:32:57.912Z
-    ## 321     NA     <NA>      mascara                                                 2017-12-03T23:23:01.795Z 2017-12-23T20:58:54.054Z
-    ## 322     NA     <NA>      mascara                                                 2017-12-03T23:23:00.835Z 2017-12-23T20:58:53.809Z
-    ## 323     NA     <NA>      mascara                                                 2017-12-03T23:23:00.160Z 2017-12-23T20:58:53.372Z
-    ## 324     NA     <NA>      mascara                                                 2017-12-03T23:22:59.125Z 2017-12-23T20:58:53.080Z
-    ## 325     NA     <NA>      mascara                                                 2017-12-03T23:22:58.486Z 2017-12-23T20:58:52.891Z
-    ## 326     NA     <NA>      mascara                                                 2017-12-03T23:22:56.643Z 2017-12-23T20:58:43.998Z
-    ## 327     NA     <NA>      mascara                                                 2017-12-03T23:22:56.212Z 2017-12-23T20:58:43.664Z
-    ## 328     NA     <NA>      mascara                                                 2017-12-03T23:22:55.591Z 2017-12-23T20:58:42.844Z
-    ## 376     NA     <NA>      mascara                                                 2016-10-03T14:05:21.976Z 2017-12-23T20:51:31.915Z
-    ## 377     NA     <NA>      mascara                                                 2016-10-03T14:05:16.516Z 2017-12-23T20:51:29.342Z
-    ## 378     NA     <NA>      mascara                                                 2016-10-03T14:05:11.236Z 2017-12-23T20:51:28.535Z
-    ## 415     NA     <NA>      mascara                                                 2016-10-02T11:37:17.060Z 2017-12-23T20:42:37.113Z
-    ## 416     NA     <NA>      mascara                                                 2016-10-02T11:37:16.882Z 2017-12-23T20:42:36.853Z
-    ## 417     NA     <NA>      mascara                                                 2016-10-02T11:37:16.520Z 2017-12-23T20:42:36.522Z
-    ## 418     NA     <NA>      mascara                                                 2016-10-02T11:37:16.231Z 2017-12-23T20:42:36.328Z
-    ## 419     NA     <NA>      mascara                                                 2016-10-02T11:37:15.079Z 2017-12-23T20:42:36.139Z
-    ## 420     NA     <NA>      mascara                                                 2016-10-02T11:37:14.825Z 2017-12-23T20:42:35.915Z
-    ## 442     NA     <NA>      mascara                                                 2016-10-02T01:32:56.781Z 2017-12-23T20:49:15.339Z
-    ## 443     NA     <NA>      mascara                                                 2016-10-02T01:32:56.668Z 2017-12-23T20:49:15.200Z
-    ## 444     NA     <NA>      mascara                                                 2016-10-02T01:32:56.574Z 2017-12-23T20:49:14.888Z
-    ## 445     NA     <NA>      mascara                                                 2016-10-02T01:32:56.447Z 2017-12-23T20:49:14.786Z
-    ## 446     NA     <NA>      mascara                                                 2016-10-02T01:32:56.200Z 2017-12-23T20:49:14.590Z
-    ## 447     NA     <NA>      mascara                                                 2016-10-02T01:32:56.108Z 2017-12-23T20:49:05.732Z
-    ## 878    3.4     <NA>      mascara                            Gluten Free, Natural 2016-10-01T18:11:49.193Z 2017-12-23T20:31:53.342Z
-    ## 879     NA     <NA>      mascara                                                 2016-10-01T18:11:48.408Z 2017-12-23T20:31:53.214Z
-    ## 880     NA     <NA>      mascara                                                 2016-10-01T18:11:46.356Z 2017-12-23T20:31:52.960Z
-    ## 881    4.7     <NA>      mascara                                                 2016-10-01T18:11:45.325Z 2017-12-23T20:50:54.633Z
-    ## 882    4.8     <NA>      mascara         Natural, Organic, Gluten Free, Canadian 2016-10-01T18:11:43.566Z 2017-12-23T20:50:54.486Z
-    ## 883    4.8     <NA>      mascara                                                 2016-10-01T18:11:42.574Z 2017-12-23T20:50:54.311Z
-    ## 884    4.6     <NA>      mascara                                     Gluten Free 2016-10-01T18:11:41.267Z 2017-12-23T20:50:54.214Z
-    ## 885    4.5     <NA>      mascara                                                 2016-10-01T18:11:39.675Z 2017-12-23T20:50:54.108Z
-    ## 886    5.0     <NA>      mascara                                                 2016-10-01T18:11:38.634Z 2017-12-23T20:50:54.935Z
-    ## 887    4.3     <NA>      mascara                                                 2016-10-01T18:11:37.939Z 2017-12-23T20:50:53.880Z
-    ## 888    4.0     <NA>      mascara                                                 2016-10-01T18:11:36.863Z 2017-12-23T20:50:53.772Z
-    ## 889    5.0     <NA>      mascara                                                 2016-10-01T18:11:36.172Z 2017-12-23T20:50:53.675Z
-    ## 890    4.5     <NA>      mascara                                                 2016-10-01T18:11:34.910Z 2017-12-23T20:50:53.492Z
-    ## 891     NA     <NA>      mascara                                                 2016-10-01T18:11:33.681Z 2017-12-23T20:50:53.374Z
-    ##                                               product_api_url
-    ## 24  http://makeup-api.herokuapp.com/api/v1/products/1025.json
-    ## 31  http://makeup-api.herokuapp.com/api/v1/products/1018.json
-    ## 38  http://makeup-api.herokuapp.com/api/v1/products/1011.json
-    ## 41  http://makeup-api.herokuapp.com/api/v1/products/1008.json
-    ## 51   http://makeup-api.herokuapp.com/api/v1/products/998.json
-    ## 52   http://makeup-api.herokuapp.com/api/v1/products/997.json
-    ## 53   http://makeup-api.herokuapp.com/api/v1/products/996.json
-    ## 54   http://makeup-api.herokuapp.com/api/v1/products/995.json
-    ## 55   http://makeup-api.herokuapp.com/api/v1/products/994.json
-    ## 56   http://makeup-api.herokuapp.com/api/v1/products/993.json
-    ## 57   http://makeup-api.herokuapp.com/api/v1/products/992.json
-    ## 58   http://makeup-api.herokuapp.com/api/v1/products/991.json
-    ## 59   http://makeup-api.herokuapp.com/api/v1/products/990.json
-    ## 60   http://makeup-api.herokuapp.com/api/v1/products/989.json
-    ## 61   http://makeup-api.herokuapp.com/api/v1/products/988.json
-    ## 321  http://makeup-api.herokuapp.com/api/v1/products/706.json
-    ## 322  http://makeup-api.herokuapp.com/api/v1/products/705.json
-    ## 323  http://makeup-api.herokuapp.com/api/v1/products/704.json
-    ## 324  http://makeup-api.herokuapp.com/api/v1/products/703.json
-    ## 325  http://makeup-api.herokuapp.com/api/v1/products/702.json
-    ## 326  http://makeup-api.herokuapp.com/api/v1/products/701.json
-    ## 327  http://makeup-api.herokuapp.com/api/v1/products/700.json
-    ## 328  http://makeup-api.herokuapp.com/api/v1/products/699.json
-    ## 376  http://makeup-api.herokuapp.com/api/v1/products/651.json
-    ## 377  http://makeup-api.herokuapp.com/api/v1/products/650.json
-    ## 378  http://makeup-api.herokuapp.com/api/v1/products/649.json
-    ## 415  http://makeup-api.herokuapp.com/api/v1/products/611.json
-    ## 416  http://makeup-api.herokuapp.com/api/v1/products/610.json
-    ## 417  http://makeup-api.herokuapp.com/api/v1/products/609.json
-    ## 418  http://makeup-api.herokuapp.com/api/v1/products/608.json
-    ## 419  http://makeup-api.herokuapp.com/api/v1/products/607.json
-    ## 420  http://makeup-api.herokuapp.com/api/v1/products/606.json
-    ## 442  http://makeup-api.herokuapp.com/api/v1/products/542.json
-    ## 443  http://makeup-api.herokuapp.com/api/v1/products/541.json
-    ## 444  http://makeup-api.herokuapp.com/api/v1/products/540.json
-    ## 445  http://makeup-api.herokuapp.com/api/v1/products/539.json
-    ## 446  http://makeup-api.herokuapp.com/api/v1/products/538.json
-    ## 447  http://makeup-api.herokuapp.com/api/v1/products/537.json
-    ## 878   http://makeup-api.herokuapp.com/api/v1/products/54.json
-    ## 879   http://makeup-api.herokuapp.com/api/v1/products/53.json
-    ## 880   http://makeup-api.herokuapp.com/api/v1/products/52.json
-    ## 881   http://makeup-api.herokuapp.com/api/v1/products/51.json
-    ## 882   http://makeup-api.herokuapp.com/api/v1/products/50.json
-    ## 883   http://makeup-api.herokuapp.com/api/v1/products/49.json
-    ## 884   http://makeup-api.herokuapp.com/api/v1/products/48.json
-    ## 885   http://makeup-api.herokuapp.com/api/v1/products/47.json
-    ## 886   http://makeup-api.herokuapp.com/api/v1/products/46.json
-    ## 887   http://makeup-api.herokuapp.com/api/v1/products/45.json
-    ## 888   http://makeup-api.herokuapp.com/api/v1/products/44.json
-    ## 889   http://makeup-api.herokuapp.com/api/v1/products/43.json
-    ## 890   http://makeup-api.herokuapp.com/api/v1/products/42.json
-    ## 891   http://makeup-api.herokuapp.com/api/v1/products/41.json
+    ##     rating category product_type                                        tag_list               created_at
+    ## 24      NA               mascara                             purpicks, CertClean 2018-06-30T19:19:31.192Z
+    ## 31      NA               mascara                 purpicks, USDA Organic, Organic 2018-06-30T19:19:30.735Z
+    ## 38      NA               mascara                               purpicks, EcoCert 2018-06-30T19:19:30.303Z
+    ## 41      NA               mascara purpicks, EWG Verified, Hypoallergenic, No Talc 2018-06-30T19:19:30.056Z
+    ## 51      NA     <NA>      mascara                                                 2017-12-24T02:33:07.960Z
+    ## 52      NA     <NA>      mascara                                                 2017-12-24T02:33:07.488Z
+    ## 53      NA     <NA>      mascara                                                 2017-12-24T02:33:06.827Z
+    ## 54      NA     <NA>      mascara                                                 2017-12-24T02:33:06.023Z
+    ## 55      NA     <NA>      mascara                                                 2017-12-24T02:33:05.545Z
+    ## 56      NA     <NA>      mascara                                                 2017-12-24T02:33:04.665Z
+    ## 57      NA     <NA>      mascara                                                 2017-12-24T02:33:02.793Z
+    ## 58      NA     <NA>      mascara                                                 2017-12-24T02:33:02.251Z
+    ## 59      NA     <NA>      mascara                                                 2017-12-24T02:33:00.623Z
+    ## 60      NA     <NA>      mascara                                                 2017-12-24T02:32:59.193Z
+    ## 61      NA     <NA>      mascara                                                 2017-12-24T02:32:57.547Z
+    ## 321     NA     <NA>      mascara                                                 2017-12-03T23:23:01.795Z
+    ## 322     NA     <NA>      mascara                                                 2017-12-03T23:23:00.835Z
+    ## 323     NA     <NA>      mascara                                                 2017-12-03T23:23:00.160Z
+    ## 324     NA     <NA>      mascara                                                 2017-12-03T23:22:59.125Z
+    ## 325     NA     <NA>      mascara                                                 2017-12-03T23:22:58.486Z
+    ## 326     NA     <NA>      mascara                                                 2017-12-03T23:22:56.643Z
+    ## 327     NA     <NA>      mascara                                                 2017-12-03T23:22:56.212Z
+    ## 328     NA     <NA>      mascara                                                 2017-12-03T23:22:55.591Z
+    ## 376     NA     <NA>      mascara                                                 2016-10-03T14:05:21.976Z
+    ## 377     NA     <NA>      mascara                                                 2016-10-03T14:05:16.516Z
+    ## 378     NA     <NA>      mascara                                                 2016-10-03T14:05:11.236Z
+    ## 415     NA     <NA>      mascara                                                 2016-10-02T11:37:17.060Z
+    ## 416     NA     <NA>      mascara                                                 2016-10-02T11:37:16.882Z
+    ## 417     NA     <NA>      mascara                                                 2016-10-02T11:37:16.520Z
+    ## 418     NA     <NA>      mascara                                                 2016-10-02T11:37:16.231Z
+    ## 419     NA     <NA>      mascara                                                 2016-10-02T11:37:15.079Z
+    ## 420     NA     <NA>      mascara                                                 2016-10-02T11:37:14.825Z
+    ## 442     NA     <NA>      mascara                                                 2016-10-02T01:32:56.781Z
+    ## 443     NA     <NA>      mascara                                                 2016-10-02T01:32:56.668Z
+    ## 444     NA     <NA>      mascara                                                 2016-10-02T01:32:56.574Z
+    ## 445     NA     <NA>      mascara                                                 2016-10-02T01:32:56.447Z
+    ## 446     NA     <NA>      mascara                                                 2016-10-02T01:32:56.200Z
+    ## 447     NA     <NA>      mascara                                                 2016-10-02T01:32:56.108Z
+    ## 878    3.4     <NA>      mascara                            Gluten Free, Natural 2016-10-01T18:11:49.193Z
+    ## 879     NA     <NA>      mascara                                                 2016-10-01T18:11:48.408Z
+    ## 880     NA     <NA>      mascara                                                 2016-10-01T18:11:46.356Z
+    ## 881    4.7     <NA>      mascara                                                 2016-10-01T18:11:45.325Z
+    ## 882    4.8     <NA>      mascara         Natural, Organic, Gluten Free, Canadian 2016-10-01T18:11:43.566Z
+    ## 883    4.8     <NA>      mascara                                                 2016-10-01T18:11:42.574Z
+    ## 884    4.6     <NA>      mascara                                     Gluten Free 2016-10-01T18:11:41.267Z
+    ## 885    4.5     <NA>      mascara                                                 2016-10-01T18:11:39.675Z
+    ## 886    5.0     <NA>      mascara                                                 2016-10-01T18:11:38.634Z
+    ## 887    4.3     <NA>      mascara                                                 2016-10-01T18:11:37.939Z
+    ## 888    4.0     <NA>      mascara                                                 2016-10-01T18:11:36.863Z
+    ## 889    5.0     <NA>      mascara                                                 2016-10-01T18:11:36.172Z
+    ## 890    4.5     <NA>      mascara                                                 2016-10-01T18:11:34.910Z
+    ## 891     NA     <NA>      mascara                                                 2016-10-01T18:11:33.681Z
+    ##                   updated_at                                           product_api_url
+    ## 24  2018-09-02T22:52:06.828Z http://makeup-api.herokuapp.com/api/v1/products/1025.json
+    ## 31  2018-09-02T22:52:06.816Z http://makeup-api.herokuapp.com/api/v1/products/1018.json
+    ## 38  2018-09-02T22:52:06.581Z http://makeup-api.herokuapp.com/api/v1/products/1011.json
+    ## 41  2018-09-02T22:52:06.553Z http://makeup-api.herokuapp.com/api/v1/products/1008.json
+    ## 51  2017-12-24T02:33:08.735Z  http://makeup-api.herokuapp.com/api/v1/products/998.json
+    ## 52  2017-12-24T02:33:07.828Z  http://makeup-api.herokuapp.com/api/v1/products/997.json
+    ## 53  2017-12-24T02:33:07.353Z  http://makeup-api.herokuapp.com/api/v1/products/996.json
+    ## 54  2017-12-24T02:33:06.430Z  http://makeup-api.herokuapp.com/api/v1/products/995.json
+    ## 55  2017-12-24T02:33:05.848Z  http://makeup-api.herokuapp.com/api/v1/products/994.json
+    ## 56  2017-12-24T02:33:05.096Z  http://makeup-api.herokuapp.com/api/v1/products/993.json
+    ## 57  2017-12-24T02:33:04.446Z  http://makeup-api.herokuapp.com/api/v1/products/992.json
+    ## 58  2017-12-24T02:33:02.648Z  http://makeup-api.herokuapp.com/api/v1/products/991.json
+    ## 59  2017-12-24T02:33:01.097Z  http://makeup-api.herokuapp.com/api/v1/products/990.json
+    ## 60  2017-12-24T02:32:59.610Z  http://makeup-api.herokuapp.com/api/v1/products/989.json
+    ## 61  2017-12-24T02:32:57.912Z  http://makeup-api.herokuapp.com/api/v1/products/988.json
+    ## 321 2017-12-23T20:58:54.054Z  http://makeup-api.herokuapp.com/api/v1/products/706.json
+    ## 322 2017-12-23T20:58:53.809Z  http://makeup-api.herokuapp.com/api/v1/products/705.json
+    ## 323 2017-12-23T20:58:53.372Z  http://makeup-api.herokuapp.com/api/v1/products/704.json
+    ## 324 2017-12-23T20:58:53.080Z  http://makeup-api.herokuapp.com/api/v1/products/703.json
+    ## 325 2017-12-23T20:58:52.891Z  http://makeup-api.herokuapp.com/api/v1/products/702.json
+    ## 326 2017-12-23T20:58:43.998Z  http://makeup-api.herokuapp.com/api/v1/products/701.json
+    ## 327 2017-12-23T20:58:43.664Z  http://makeup-api.herokuapp.com/api/v1/products/700.json
+    ## 328 2017-12-23T20:58:42.844Z  http://makeup-api.herokuapp.com/api/v1/products/699.json
+    ## 376 2017-12-23T20:51:31.915Z  http://makeup-api.herokuapp.com/api/v1/products/651.json
+    ## 377 2017-12-23T20:51:29.342Z  http://makeup-api.herokuapp.com/api/v1/products/650.json
+    ## 378 2017-12-23T20:51:28.535Z  http://makeup-api.herokuapp.com/api/v1/products/649.json
+    ## 415 2017-12-23T20:42:37.113Z  http://makeup-api.herokuapp.com/api/v1/products/611.json
+    ## 416 2017-12-23T20:42:36.853Z  http://makeup-api.herokuapp.com/api/v1/products/610.json
+    ## 417 2017-12-23T20:42:36.522Z  http://makeup-api.herokuapp.com/api/v1/products/609.json
+    ## 418 2017-12-23T20:42:36.328Z  http://makeup-api.herokuapp.com/api/v1/products/608.json
+    ## 419 2017-12-23T20:42:36.139Z  http://makeup-api.herokuapp.com/api/v1/products/607.json
+    ## 420 2017-12-23T20:42:35.915Z  http://makeup-api.herokuapp.com/api/v1/products/606.json
+    ## 442 2017-12-23T20:49:15.339Z  http://makeup-api.herokuapp.com/api/v1/products/542.json
+    ## 443 2017-12-23T20:49:15.200Z  http://makeup-api.herokuapp.com/api/v1/products/541.json
+    ## 444 2017-12-23T20:49:14.888Z  http://makeup-api.herokuapp.com/api/v1/products/540.json
+    ## 445 2017-12-23T20:49:14.786Z  http://makeup-api.herokuapp.com/api/v1/products/539.json
+    ## 446 2017-12-23T20:49:14.590Z  http://makeup-api.herokuapp.com/api/v1/products/538.json
+    ## 447 2017-12-23T20:49:05.732Z  http://makeup-api.herokuapp.com/api/v1/products/537.json
+    ## 878 2017-12-23T20:31:53.342Z   http://makeup-api.herokuapp.com/api/v1/products/54.json
+    ## 879 2017-12-23T20:31:53.214Z   http://makeup-api.herokuapp.com/api/v1/products/53.json
+    ## 880 2017-12-23T20:31:52.960Z   http://makeup-api.herokuapp.com/api/v1/products/52.json
+    ## 881 2017-12-23T20:50:54.633Z   http://makeup-api.herokuapp.com/api/v1/products/51.json
+    ## 882 2017-12-23T20:50:54.486Z   http://makeup-api.herokuapp.com/api/v1/products/50.json
+    ## 883 2017-12-23T20:50:54.311Z   http://makeup-api.herokuapp.com/api/v1/products/49.json
+    ## 884 2017-12-23T20:50:54.214Z   http://makeup-api.herokuapp.com/api/v1/products/48.json
+    ## 885 2017-12-23T20:50:54.108Z   http://makeup-api.herokuapp.com/api/v1/products/47.json
+    ## 886 2017-12-23T20:50:54.935Z   http://makeup-api.herokuapp.com/api/v1/products/46.json
+    ## 887 2017-12-23T20:50:53.880Z   http://makeup-api.herokuapp.com/api/v1/products/45.json
+    ## 888 2017-12-23T20:50:53.772Z   http://makeup-api.herokuapp.com/api/v1/products/44.json
+    ## 889 2017-12-23T20:50:53.675Z   http://makeup-api.herokuapp.com/api/v1/products/43.json
+    ## 890 2017-12-23T20:50:53.492Z   http://makeup-api.herokuapp.com/api/v1/products/42.json
+    ## 891 2017-12-23T20:50:53.374Z   http://makeup-api.herokuapp.com/api/v1/products/41.json
     ##                                                                                                           api_featured_image
     ## 24   //s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/025/original/open-uri20180630-4-yxmmga?1530390376
     ## 31   //s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/018/original/open-uri20180630-4-g58t74?1530390371
@@ -557,59 +610,112 @@ foundation <- product_type("foundation")
 foundation
 ```
 
-    ##       id           brand                                                                           name price price_sign currency
-    ## 4   1045       colourpop                                                           No Filter Foundation  12.0          $      CAD
-    ## 6   1043          deciem                                                               Serum Foundation   6.7          $      CAD
-    ## 7   1042          deciem                                                            Coverage Foundation   6.9          $      CAD
-    ## 10  1039      w3llpeople                                               Realist Invisible Setting Powder   0.0          $      USD
-    ## 16  1033 rejuva minerals                                                      Pressed Powder Foundation   0.0          $      USD
-    ## 21  1028      marienatie                                                             Pressed Foundation   0.0          $      USD
-    ## 45  1004        glossier                                                              Stretch Concealer  22.0          $      USD
-    ## 47  1002        glossier                                                                         Wowder  27.0          $      USD
-    ## 48  1001        glossier                                                                      Haloscope  27.0          $      USD
-    ## 49  1000        glossier                                                           Perfecting Skin Tint  32.0          $      USD
-    ## 110  939             nyx                                                             SFX Setting Powder  10.0          $      USD
-    ## 111  938             nyx                                              Holographic Halo Finishing Powder  12.0          $      USD
-    ## 112  937             nyx                                                                Blotting Powder  12.0          $      USD
-    ## 113  936             nyx                                                     #NOFILTER Finishing Powder  12.0          $      USD
-    ## 114  935             nyx                                                        Color Correcting Powder  10.0          $      USD
-    ## 115  934             nyx                                          High Definition Finishing Powder Mini   3.5          $      USD
-    ## 116  933             nyx                                                                  Primal Colors   5.0          $      USD
-    ## 117  932             nyx                                                       Radiant Finishing Powder   9.0          $      USD
-    ## 118  931             nyx                                                       Mineral Finishing Powder  10.0          $      USD
-    ## 119  930             nyx                                               High Definition Finishing Powder  10.0          $      USD
-    ## 120  929             nyx                                                        Studio Finishing Powder  10.0          $      USD
-    ## 136  912             nyx                                                Gotcha Covered Concealer Pencil   7.0          $      USD
-    ## 137  911             nyx                                              Conceal, Correct, Contour Palette  12.0          $      USD
-    ## 139  909             nyx                                                          Dark Circle Concealer   6.0          $      USD
-    ## 140  908             nyx                                                       Gotcha Covered Concealer   6.0          $      USD
-    ## 141  907             nyx                                                       Color Correcting Palette  12.0          $      USD
-    ## 142  906             nyx                                                                  Concealer Jar   5.0          $      USD
-    ## 143  905             nyx                                                   HD Photogenic Concealer Wand   5.0          $      USD
-    ## 144  904             nyx                                                             Tinted Moisturizer  10.0          $      USD
-    ## 145  903             nyx                                              Define & Refine Powder Foundation  12.0          $      USD
-    ## 146  902             nyx                                                                       BB Cream  13.0          $      USD
-    ## 147  901             nyx                                         Invincible Fullest Coverage Foundation  12.0          $      USD
-    ## 148  900             nyx                                                       Mineral Stick Foundation  10.0          $      USD
-    ## 149  899             nyx                                      Stay Matte But Not Flat Liquid Foundation   7.5          $      USD
-    ## 150  898             nyx                                      Stay Matte But Not Flat Powder Foundation   9.5          $      USD
-    ## 151  897             nyx                                                HD Studio Photogenic Foundation  18.0          $      USD
-    ## 152  896             nyx                                                  Hydra Touch Powder Foundation  10.0          $      USD
-    ## 153  895             nyx                                                           Pro Foundation Mixer  10.0          $      USD
-    ## 154  894             nyx                                                  Total Control Drop Foundation  14.0          $      USD
-    ## 201  847           fenty                                                   MATCH STIX - Matte Skinstick  25.0          $      USD
-    ## 202  846        clinique                        Even Better&trade; Compact Makeup Broad Spectrum SPF 15  32.0          $      USD
-    ## 203  845        clinique Redness Solutions Makeup<BR>Broad Spectrum SPF 15<BR>With Probiotic Technology  28.0          $      USD
-    ## 204  844        clinique                                                     Stay-Matte Oil-Free Makeup  26.0          $      USD
-    ## 205  843        clinique          Repairwear Laser Focus&trade; All-Smooth Makeup Broad Spectrum SPF 15  36.0          $      USD
-    ## 206  842        clinique                                           Perfectly Real&trade; Compact Makeup  28.0          $      USD
-    ## 207  841        clinique                                     Chubby in the Nude&trade; Foundation Stick  25.0          $      USD
-    ## 208  840        clinique                     Super City Block™ BB Cushion Compact Broad Spectrum SPF 50  17.5          $      USD
-    ## 209  839        clinique                                                 Superpowder Double Face Makeup  24.0          $      USD
-    ## 210  838        clinique                                                   Perfectly Real&trade; Makeup  28.0          $      USD
-    ## 211  837        clinique                         Beyond Perfecting&trade; Powder Foundation + Concealer  28.0          $      USD
-    ## 212  836        clinique                                            Acne Solutions&trade; Liquid Makeup  28.0          $      USD
-    ## 213  835        clinique                                                    Superbalanced&trade; Makeup  26.0          $      USD
+    ##       id           brand                                                                           name price
+    ## 4   1045       colourpop                                                           No Filter Foundation  12.0
+    ## 6   1043          deciem                                                               Serum Foundation   6.7
+    ## 7   1042          deciem                                                            Coverage Foundation   6.9
+    ## 10  1039      w3llpeople                                               Realist Invisible Setting Powder   0.0
+    ## 16  1033 rejuva minerals                                                      Pressed Powder Foundation   0.0
+    ## 21  1028      marienatie                                                             Pressed Foundation   0.0
+    ## 45  1004        glossier                                                              Stretch Concealer  22.0
+    ## 47  1002        glossier                                                                         Wowder  27.0
+    ## 48  1001        glossier                                                                      Haloscope  27.0
+    ## 49  1000        glossier                                                           Perfecting Skin Tint  32.0
+    ## 110  939             nyx                                                             SFX Setting Powder  10.0
+    ## 111  938             nyx                                              Holographic Halo Finishing Powder  12.0
+    ## 112  937             nyx                                                                Blotting Powder  12.0
+    ## 113  936             nyx                                                     #NOFILTER Finishing Powder  12.0
+    ## 114  935             nyx                                                        Color Correcting Powder  10.0
+    ## 115  934             nyx                                          High Definition Finishing Powder Mini   3.5
+    ## 116  933             nyx                                                                  Primal Colors   5.0
+    ## 117  932             nyx                                                       Radiant Finishing Powder   9.0
+    ## 118  931             nyx                                                       Mineral Finishing Powder  10.0
+    ## 119  930             nyx                                               High Definition Finishing Powder  10.0
+    ## 120  929             nyx                                                        Studio Finishing Powder  10.0
+    ## 136  912             nyx                                                Gotcha Covered Concealer Pencil   7.0
+    ## 137  911             nyx                                              Conceal, Correct, Contour Palette  12.0
+    ## 139  909             nyx                                                          Dark Circle Concealer   6.0
+    ## 140  908             nyx                                                       Gotcha Covered Concealer   6.0
+    ## 141  907             nyx                                                       Color Correcting Palette  12.0
+    ## 142  906             nyx                                                                  Concealer Jar   5.0
+    ## 143  905             nyx                                                   HD Photogenic Concealer Wand   5.0
+    ## 144  904             nyx                                                             Tinted Moisturizer  10.0
+    ## 145  903             nyx                                              Define & Refine Powder Foundation  12.0
+    ## 146  902             nyx                                                                       BB Cream  13.0
+    ## 147  901             nyx                                         Invincible Fullest Coverage Foundation  12.0
+    ## 148  900             nyx                                                       Mineral Stick Foundation  10.0
+    ## 149  899             nyx                                      Stay Matte But Not Flat Liquid Foundation   7.5
+    ## 150  898             nyx                                      Stay Matte But Not Flat Powder Foundation   9.5
+    ## 151  897             nyx                                                HD Studio Photogenic Foundation  18.0
+    ## 152  896             nyx                                                  Hydra Touch Powder Foundation  10.0
+    ## 153  895             nyx                                                           Pro Foundation Mixer  10.0
+    ## 154  894             nyx                                                  Total Control Drop Foundation  14.0
+    ## 201  847           fenty                                                   MATCH STIX - Matte Skinstick  25.0
+    ## 202  846        clinique                        Even Better&trade; Compact Makeup Broad Spectrum SPF 15  32.0
+    ## 203  845        clinique Redness Solutions Makeup<BR>Broad Spectrum SPF 15<BR>With Probiotic Technology  28.0
+    ## 204  844        clinique                                                     Stay-Matte Oil-Free Makeup  26.0
+    ## 205  843        clinique          Repairwear Laser Focus&trade; All-Smooth Makeup Broad Spectrum SPF 15  36.0
+    ## 206  842        clinique                                           Perfectly Real&trade; Compact Makeup  28.0
+    ## 207  841        clinique                                     Chubby in the Nude&trade; Foundation Stick  25.0
+    ## 208  840        clinique                     Super City Block™ BB Cushion Compact Broad Spectrum SPF 50  17.5
+    ## 209  839        clinique                                                 Superpowder Double Face Makeup  24.0
+    ## 210  838        clinique                                                   Perfectly Real&trade; Makeup  28.0
+    ## 211  837        clinique                         Beyond Perfecting&trade; Powder Foundation + Concealer  28.0
+    ## 212  836        clinique                                            Acne Solutions&trade; Liquid Makeup  28.0
+    ## 213  835        clinique                                                    Superbalanced&trade; Makeup  26.0
+    ##     price_sign currency
+    ## 4            $      CAD
+    ## 6            $      CAD
+    ## 7            $      CAD
+    ## 10           $      USD
+    ## 16           $      USD
+    ## 21           $      USD
+    ## 45           $      USD
+    ## 47           $      USD
+    ## 48           $      USD
+    ## 49           $      USD
+    ## 110          $      USD
+    ## 111          $      USD
+    ## 112          $      USD
+    ## 113          $      USD
+    ## 114          $      USD
+    ## 115          $      USD
+    ## 116          $      USD
+    ## 117          $      USD
+    ## 118          $      USD
+    ## 119          $      USD
+    ## 120          $      USD
+    ## 136          $      USD
+    ## 137          $      USD
+    ## 139          $      USD
+    ## 140          $      USD
+    ## 141          $      USD
+    ## 142          $      USD
+    ## 143          $      USD
+    ## 144          $      USD
+    ## 145          $      USD
+    ## 146          $      USD
+    ## 147          $      USD
+    ## 148          $      USD
+    ## 149          $      USD
+    ## 150          $      USD
+    ## 151          $      USD
+    ## 152          $      USD
+    ## 153          $      USD
+    ## 154          $      USD
+    ## 201          $      USD
+    ## 202          $      USD
+    ## 203          $      USD
+    ## 204          $      USD
+    ## 205          $      USD
+    ## 206          $      USD
+    ## 207          $      USD
+    ## 208          $      USD
+    ## 209          $      USD
+    ## 210          $      USD
+    ## 211          $      USD
+    ## 212          $      USD
+    ## 213          $      USD
     ##                                                                                                                                                                                                                                                                             image_link
     ## 4                                                                                                                                                                                    https://cdn.shopify.com/s/files/1/1338/0845/products/foundations-lineup_800x1200.jpg?v=1528927785
     ## 6                                                                                                          https://3bc01d2807fb1bc0d25c-a86d2521f1af8989841b9619f5314be5.ssl.cf1.rackcdn.com/products/market-img/rdn-serum-foundation-30-r-30ml.png?v=6ab9fcb8ca2abb9828afcf9dcdad9f94
@@ -822,59 +928,112 @@ foundation
     ## 211                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        A powder foundation and concealer in one for a natural, beyond perfected look that lasts all day. Even through sweat and humidity. Weightless powder makeup covers thoroughly without clogging pores. Skin breathes comfortably, colour stays true. Oil-free.
     ## 212                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Feels so fresh, looks so natural. Non-irritating, oil-free makeup helps blend away blemishes, neutralize redness. Medicated ingredients help treat existing breakouts and keep them from coming back.
     ## 213                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              The smart makeup. Liquid foundation with adjustable, oil-free coverage provides moisture and absorbs oil when and where needed. Silky upon application.
-    ##     rating    category product_type                                                                            tag_list               created_at
-    ## 4       NA      liquid   foundation                                                                 cruelty free, Vegan 2018-07-08T18:22:25.273Z
-    ## 6       NA      liquid   foundation water free, cruelty free, alcohol free, oil free, silicone free, Vegan, Gluten Free 2018-07-06T23:16:12.698Z
-    ## 7       NA      liquid   foundation water free, cruelty free, alcohol free, oil free, silicone free, Vegan, Gluten Free 2018-07-06T22:27:54.541Z
-    ## 10      NA      powder   foundation                                                 purpicks, EWG Verified, Gluten Free 2018-06-30T19:19:32.191Z
-    ## 16      NA      powder   foundation                                     purpicks, EWG Verified, Hypoallergenic, No Talc 2018-06-30T19:19:31.736Z
-    ## 21      NA      powder   foundation                                                                 purpicks, CertClean 2018-06-30T19:19:31.368Z
-    ## 45      NA   concealer   foundation                                                                                     2017-12-27T03:11:01.369Z
-    ## 47      NA      powder   foundation                                                                                     2017-12-27T02:50:48.250Z
-    ## 48      NA highlighter   foundation                                                                                     2017-12-27T02:44:12.059Z
-    ## 49      NA        <NA>   foundation                                                                                     2017-12-27T02:34:21.781Z
-    ## 110     NA      powder   foundation                                                                                     2017-12-24T02:31:31.850Z
-    ## 111     NA      powder   foundation                                                                                     2017-12-24T02:31:30.972Z
-    ## 112     NA      powder   foundation                                                                                     2017-12-24T02:31:29.788Z
-    ## 113     NA      powder   foundation                                                                                     2017-12-24T02:31:26.988Z
-    ## 114     NA      powder   foundation                                                                                     2017-12-24T02:31:25.255Z
-    ## 115     NA      powder   foundation                                                                                     2017-12-24T02:31:23.561Z
-    ## 116     NA      powder   foundation                                                                                     2017-12-24T02:31:21.681Z
-    ## 117     NA      powder   foundation                                                                                     2017-12-24T02:31:20.618Z
-    ## 118     NA      powder   foundation                                                                                     2017-12-24T02:31:13.900Z
-    ## 119     NA      powder   foundation                                                                                     2017-12-24T02:31:12.680Z
-    ## 120     NA      powder   foundation                                                                                     2017-12-24T02:31:11.703Z
-    ## 136     NA   concealer   foundation                                                                                     2017-12-24T02:28:21.007Z
-    ## 137     NA   concealer   foundation                                                                                     2017-12-24T02:28:19.928Z
-    ## 139     NA   concealer   foundation                                                                                     2017-12-24T02:28:17.702Z
-    ## 140     NA   concealer   foundation                                                                                     2017-12-24T02:28:15.481Z
-    ## 141     NA   concealer   foundation                                                                                     2017-12-24T02:28:14.774Z
-    ## 142     NA   concealer   foundation                                                                                     2017-12-24T02:28:11.932Z
-    ## 143     NA   concealer   foundation                                                                                     2017-12-24T02:28:08.470Z
-    ## 144     NA        <NA>   foundation                                                                                     2017-12-24T02:28:06.246Z
-    ## 145     NA      powder   foundation                                                                                     2017-12-24T02:28:04.203Z
-    ## 146     NA        <NA>   foundation                                                                                     2017-12-24T02:28:01.955Z
-    ## 147     NA        <NA>   foundation                                                                                     2017-12-24T02:27:59.656Z
-    ## 148     NA        <NA>   foundation                                                                                     2017-12-24T02:27:57.842Z
-    ## 149     NA        <NA>   foundation                                                                                     2017-12-24T02:27:53.726Z
-    ## 150     NA      powder   foundation                                                                                     2017-12-24T02:27:50.586Z
-    ## 151     NA        <NA>   foundation                                                                                     2017-12-24T02:27:47.335Z
-    ## 152     NA      powder   foundation                                                                                     2017-12-24T02:27:42.746Z
-    ## 153     NA        <NA>   foundation                                                                                     2017-12-24T02:27:41.018Z
-    ## 154     NA        <NA>   foundation                                                                                     2017-12-24T02:27:38.676Z
-    ## 201     NA   concealer   foundation                                                                                     2017-12-23T23:43:36.178Z
-    ## 202     NA        <NA>   foundation                                                                                     2017-12-23T23:43:17.723Z
-    ## 203     NA        <NA>   foundation                                                                                     2017-12-23T23:43:17.197Z
-    ## 204     NA        <NA>   foundation                                                                                     2017-12-23T23:43:16.503Z
-    ## 205     NA        <NA>   foundation                                                                                     2017-12-23T23:43:15.393Z
-    ## 206     NA        <NA>   foundation                                                                                     2017-12-23T23:43:14.642Z
-    ## 207     NA        <NA>   foundation                                                                                     2017-12-23T23:43:13.994Z
-    ## 208     NA        <NA>   foundation                                                                                     2017-12-23T23:43:13.073Z
-    ## 209     NA        <NA>   foundation                                                                                     2017-12-23T23:43:12.156Z
-    ## 210     NA        <NA>   foundation                                                                                     2017-12-23T23:43:11.296Z
-    ## 211     NA        <NA>   foundation                                                                                     2017-12-23T23:43:10.659Z
-    ## 212     NA        <NA>   foundation                                                                                     2017-12-23T23:43:09.917Z
-    ## 213     NA        <NA>   foundation                                                                                     2017-12-23T23:43:08.967Z
+    ##     rating    category product_type
+    ## 4       NA      liquid   foundation
+    ## 6       NA      liquid   foundation
+    ## 7       NA      liquid   foundation
+    ## 10      NA      powder   foundation
+    ## 16      NA      powder   foundation
+    ## 21      NA      powder   foundation
+    ## 45      NA   concealer   foundation
+    ## 47      NA      powder   foundation
+    ## 48      NA highlighter   foundation
+    ## 49      NA        <NA>   foundation
+    ## 110     NA      powder   foundation
+    ## 111     NA      powder   foundation
+    ## 112     NA      powder   foundation
+    ## 113     NA      powder   foundation
+    ## 114     NA      powder   foundation
+    ## 115     NA      powder   foundation
+    ## 116     NA      powder   foundation
+    ## 117     NA      powder   foundation
+    ## 118     NA      powder   foundation
+    ## 119     NA      powder   foundation
+    ## 120     NA      powder   foundation
+    ## 136     NA   concealer   foundation
+    ## 137     NA   concealer   foundation
+    ## 139     NA   concealer   foundation
+    ## 140     NA   concealer   foundation
+    ## 141     NA   concealer   foundation
+    ## 142     NA   concealer   foundation
+    ## 143     NA   concealer   foundation
+    ## 144     NA        <NA>   foundation
+    ## 145     NA      powder   foundation
+    ## 146     NA        <NA>   foundation
+    ## 147     NA        <NA>   foundation
+    ## 148     NA        <NA>   foundation
+    ## 149     NA        <NA>   foundation
+    ## 150     NA      powder   foundation
+    ## 151     NA        <NA>   foundation
+    ## 152     NA      powder   foundation
+    ## 153     NA        <NA>   foundation
+    ## 154     NA        <NA>   foundation
+    ## 201     NA   concealer   foundation
+    ## 202     NA        <NA>   foundation
+    ## 203     NA        <NA>   foundation
+    ## 204     NA        <NA>   foundation
+    ## 205     NA        <NA>   foundation
+    ## 206     NA        <NA>   foundation
+    ## 207     NA        <NA>   foundation
+    ## 208     NA        <NA>   foundation
+    ## 209     NA        <NA>   foundation
+    ## 210     NA        <NA>   foundation
+    ## 211     NA        <NA>   foundation
+    ## 212     NA        <NA>   foundation
+    ## 213     NA        <NA>   foundation
+    ##                                                                                tag_list               created_at
+    ## 4                                                                   cruelty free, Vegan 2018-07-08T18:22:25.273Z
+    ## 6   water free, cruelty free, alcohol free, oil free, silicone free, Vegan, Gluten Free 2018-07-06T23:16:12.698Z
+    ## 7   water free, cruelty free, alcohol free, oil free, silicone free, Vegan, Gluten Free 2018-07-06T22:27:54.541Z
+    ## 10                                                  purpicks, EWG Verified, Gluten Free 2018-06-30T19:19:32.191Z
+    ## 16                                      purpicks, EWG Verified, Hypoallergenic, No Talc 2018-06-30T19:19:31.736Z
+    ## 21                                                                  purpicks, CertClean 2018-06-30T19:19:31.368Z
+    ## 45                                                                                      2017-12-27T03:11:01.369Z
+    ## 47                                                                                      2017-12-27T02:50:48.250Z
+    ## 48                                                                                      2017-12-27T02:44:12.059Z
+    ## 49                                                                                      2017-12-27T02:34:21.781Z
+    ## 110                                                                                     2017-12-24T02:31:31.850Z
+    ## 111                                                                                     2017-12-24T02:31:30.972Z
+    ## 112                                                                                     2017-12-24T02:31:29.788Z
+    ## 113                                                                                     2017-12-24T02:31:26.988Z
+    ## 114                                                                                     2017-12-24T02:31:25.255Z
+    ## 115                                                                                     2017-12-24T02:31:23.561Z
+    ## 116                                                                                     2017-12-24T02:31:21.681Z
+    ## 117                                                                                     2017-12-24T02:31:20.618Z
+    ## 118                                                                                     2017-12-24T02:31:13.900Z
+    ## 119                                                                                     2017-12-24T02:31:12.680Z
+    ## 120                                                                                     2017-12-24T02:31:11.703Z
+    ## 136                                                                                     2017-12-24T02:28:21.007Z
+    ## 137                                                                                     2017-12-24T02:28:19.928Z
+    ## 139                                                                                     2017-12-24T02:28:17.702Z
+    ## 140                                                                                     2017-12-24T02:28:15.481Z
+    ## 141                                                                                     2017-12-24T02:28:14.774Z
+    ## 142                                                                                     2017-12-24T02:28:11.932Z
+    ## 143                                                                                     2017-12-24T02:28:08.470Z
+    ## 144                                                                                     2017-12-24T02:28:06.246Z
+    ## 145                                                                                     2017-12-24T02:28:04.203Z
+    ## 146                                                                                     2017-12-24T02:28:01.955Z
+    ## 147                                                                                     2017-12-24T02:27:59.656Z
+    ## 148                                                                                     2017-12-24T02:27:57.842Z
+    ## 149                                                                                     2017-12-24T02:27:53.726Z
+    ## 150                                                                                     2017-12-24T02:27:50.586Z
+    ## 151                                                                                     2017-12-24T02:27:47.335Z
+    ## 152                                                                                     2017-12-24T02:27:42.746Z
+    ## 153                                                                                     2017-12-24T02:27:41.018Z
+    ## 154                                                                                     2017-12-24T02:27:38.676Z
+    ## 201                                                                                     2017-12-23T23:43:36.178Z
+    ## 202                                                                                     2017-12-23T23:43:17.723Z
+    ## 203                                                                                     2017-12-23T23:43:17.197Z
+    ## 204                                                                                     2017-12-23T23:43:16.503Z
+    ## 205                                                                                     2017-12-23T23:43:15.393Z
+    ## 206                                                                                     2017-12-23T23:43:14.642Z
+    ## 207                                                                                     2017-12-23T23:43:13.994Z
+    ## 208                                                                                     2017-12-23T23:43:13.073Z
+    ## 209                                                                                     2017-12-23T23:43:12.156Z
+    ## 210                                                                                     2017-12-23T23:43:11.296Z
+    ## 211                                                                                     2017-12-23T23:43:10.659Z
+    ## 212                                                                                     2017-12-23T23:43:09.917Z
+    ## 213                                                                                     2017-12-23T23:43:08.967Z
     ##                   updated_at                                           product_api_url
     ## 4   2018-07-09T00:53:23.313Z http://makeup-api.herokuapp.com/api/v1/products/1045.json
     ## 6   2018-09-02T22:52:06.882Z http://makeup-api.herokuapp.com/api/v1/products/1043.json
